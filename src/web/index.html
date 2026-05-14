@@ -28,7 +28,9 @@
 
     <div class="grid grid-cols-3 gap-4 w-40 mx-auto text-xl font-bold">
         <div></div>
+        <div :class="keyState.q ? 'bg-green-500' : 'bg-gray-700'" class="p-4 rounded">A</div>
         <div :class="keyState.w ? 'bg-green-500' : 'bg-gray-700'" class="p-4 rounded">W</div>
+        <div :class="keyState.e ? 'bg-green-500' : 'bg-gray-700'" class="p-4 rounded">A</div>
         <div></div>
 
         <div :class="keyState.a ? 'bg-green-500' : 'bg-gray-700'" class="p-4 rounded">A</div>
@@ -42,7 +44,7 @@ function controller() {
     return {
         connected: false,
         characteristic: null,
-        keyState: { w: false, a: false, s: false, d: false },
+        keyState: { w: false, a: false, s: false, d: false, q: false, e: false },
 
         SERVICE_UUID: '6e400001-b5a3-f393-e0a9-e50e24dcca9e',
         CHARACTERISTIC_UUID: '6e400002-b5a3-f393-e0a9-e50e24dcca9e',
